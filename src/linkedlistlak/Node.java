@@ -10,5 +10,5 @@ package linkedlistlak;
  * @author User
  */
 public class Node {
-    
+    public Node next;
 }
