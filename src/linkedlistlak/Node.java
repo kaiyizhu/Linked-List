@@ -10,5 +10,6 @@ package linkedlistlak;
  * @author User
  */
 public class Node {
+    //sorry had to add this guy to start programming
     public Node next;
 }
