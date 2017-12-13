@@ -71,11 +71,16 @@ public class LinkedList {
     public void remove(Patient d){
         //create a node to represent the head
         Node n = head;
+        //for every node in the list
         for(int i=0; i<size;i++){
-        //     if(n.data.compareTo(d) == 0){
-        //        remove(i);
-        //        break;
-        //    }
+            //if this node's data equals the sought data
+             if(n.getData().compareTo(d) == 0){
+                //remove it
+                remove(i);
+                //break the loop
+                break;
+            }
+            //if it was not found, move to the next node
             n = n.next;
         }
     }
