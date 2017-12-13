@@ -8,18 +8,19 @@ package linkedlistlak;
 /**
  *
  * @author User
+ * @param <Patient>
  */
-public class Node<I>  implements Comparable<Node> {
+public class Node<Patient>  implements Comparable<Node> {
     //sorry had to add this guy to start programming
     
-    public Node next;
+    public Node<Patient> next;
     public Patient data;
     
-    public Node(){
+    public Node(Patient data){
             
     }
     
-    public Node(Node next, Patient data){
+    public Node(Node<Patient> next, Patient data){
         this.next = next;
         this.data = data;
     }
@@ -29,7 +30,7 @@ public class Node<I>  implements Comparable<Node> {
         
         return 0;
     }
-    public Node getNext(){
+    public Node<Patient> getNext(){
         
         return this.next;
     }
@@ -43,7 +44,7 @@ public class Node<I>  implements Comparable<Node> {
         
     }  
 
-    public void setNext(Node next) {
+    public void setNext(Node<Patient> next) {
         this.next = next;
     }
 
