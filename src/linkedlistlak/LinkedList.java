@@ -45,19 +45,20 @@ public class LinkedList {
             //should probobally throw an exception here
             return;
         }else if(i == size-1){
+          //set the tail to the second last node
           tail = get(size-2); 
-        }
+          //set the tail's next to null (remove one after tail)
+          tail.next = null;
         //if the head is to be removed
-        if(i == 0){
+        }else if(i == 0){
             //assign the head variable to the next node
             head = head.next;
+        }else{
+            //create a node object to represent the node before the one to be removed
+            Node n = get(i-1);
+            //set the node at this position to the next node
+            n.next = n.next.next;
         }
-        //create a node objext to represent the node before the one to be removed
-        Node n = head;
-        //get the element before the removed
-        n = get(i-1);
-        //set the node at this position to the next node
-        n.next = n.next.next;
         size--;
     }
     public void remove(Patient d){
