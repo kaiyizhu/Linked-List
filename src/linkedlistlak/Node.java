@@ -20,7 +20,7 @@ public class Node<Patient>  implements Comparable<Node> {
             
     }
     
-    public Node(Node next, Patient data){
+    public Node(Node<Patient> next, Patient data){
         this.next = next;
         this.data = data;
     }
