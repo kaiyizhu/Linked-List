@@ -9,7 +9,33 @@ package linkedlistlak;
  *
  * @author User
  */
-public class Node {
+public class Node<I>  implements Comparable<Node> {
     //sorry had to add this guy to start programming
+    
     public Node next;
+    public Patient data;
+    
+    public Node(){
+            
+    }
+    
+    public Node(Node next, Patient data){
+        this.next = next;
+        this.data = data;
+    }
+
+    @Override
+    public int compareTo(Node o) {
+        
+        return 0;
+    }
+    public Node getNext(){
+        
+        return this.next;
+    }
+    
+    public Patient getData(){
+ 
+        return this.data;
+    }
 }

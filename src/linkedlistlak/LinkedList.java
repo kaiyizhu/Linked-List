@@ -32,10 +32,14 @@ public class LinkedList {
     
             //Asher
     //I'm not sure if these parameters should be Patient or Node
+    //yup, they should be patient. Ty for making them
     public void add(Patient d){
+        
+        
         
     }
     public void add(Patient d, int i){
+       
         
     }
     
@@ -78,4 +82,6 @@ public class LinkedList {
         }
     }
 
+   
+    
 }
