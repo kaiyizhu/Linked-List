@@ -38,4 +38,13 @@ public class Node<I>  implements Comparable<Node> {
  
         return this.data;
     }
+    public void setData(Patient data){
+        this.data = data;
+        
+    }  
+
+    public void setNext(Node next) {
+        this.next = next;
+    }
+
 }
