@@ -45,40 +45,38 @@ public class LinkedList {
     
     //Luke
     public void remove(int i){
+        //if the index is larger than the last element's index
         if(i > size -1){
             //should probobally throw an exception here
             return;
+        //otherwise, if you want to remove the tail
         }else if(i == size-1){
-          // tail = get(size-2); 
-        }
+          //set the tail to the second last node
+          tail = get(size-2); 
+          //set the new tail's next to null (remove one after tail)
+          tail.next = null;
         //if the head is to be removed
-        if(i == 0){
+        }else if(i == 0){
             //assign the head variable to the next node
             head = head.next;
+        }else{
+            //create a node object to represent the node before the one to be removed
+            Node n = get(i-1);
+            //set the node at this position's next to the node after the replaced one
+            n.next = n.next.next;
         }
-        //create a node objext to represent the node before the one to be removed
-        Node n = head;
-        //for a number of times equal to the index
-        for(int p = 0; p<i-1; p++){
-            //set n to the next in the chain
-            n = n.next;
-        }
-        //set the node at this position to the next node
-        n.next = n.next.next;
+        //reduce the size by one
         size--;
     }
     public void remove(Patient d){
+        //create a node to represent the head
         Node n = head;
-        boolean removed = false;
         for(int i=0; i<size;i++){
- /*         if(n.data.equals(d)){
-                remove(i);
-                removed = true;
-            }
- */
-        }
-        if(!removed){
-            //do something (maybe return something)?
+        //     if(n.data.compareTo(d) == 0){
+        //        remove(i);
+        //        break;
+        //    }
+            n = n.next;
         }
     }
 

@@ -9,11 +9,34 @@ package linkedlistlak;
  *
  * @author User
  */
+
+
 public class Patient implements Comparable{
+    
+    private String firstName;
+    private String lastName;
+    private int priority;
+    private Patient next;
+    
+    public void Patient(){
+  
+    }
+    
+    public void Patient(String firstName, String lastName, int priority){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.priority = priority;
+    }
+    
+    public String toString(Node n){
+        return null;
+        
+    }
 
     @Override
-    public int compareTo(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int compareTo(Object o)
+    {
+        return 0;
     }
     
 }
