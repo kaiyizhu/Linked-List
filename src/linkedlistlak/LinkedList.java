@@ -45,7 +45,7 @@ public class LinkedList {
             //should probobally throw an exception here
             return;
         }else if(i == size-1){
-          // tail = get(size-2); 
+          tail = get(size-2); 
         }
         //if the head is to be removed
         if(i == 0){
@@ -54,27 +54,18 @@ public class LinkedList {
         }
         //create a node objext to represent the node before the one to be removed
         Node n = head;
-        //for a number of times equal to the index
-        for(int p = 0; p<i-1; p++){
-            //set n to the next in the chain
-            n = n.next;
-        }
+        //get the element before the removed
+        n = get(i-1);
         //set the node at this position to the next node
         n.next = n.next.next;
         size--;
     }
     public void remove(Patient d){
         Node n = head;
-        boolean removed = false;
         for(int i=0; i<size;i++){
- /*         if(n.data.equals(d)){
-                remove(i);
-                removed = true;
-            }
- */
-        }
-        if(!removed){
-            //do something (maybe return something)?
+        //     if(n.data.equals(d)){
+        //        remove(i);
+        //    }
         }
     }
 
