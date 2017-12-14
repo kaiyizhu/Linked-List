@@ -34,12 +34,18 @@ public class LinkedList {
     //I'm not sure if these parameters should be Patient or Node
     //yup, they should be patient. Ty for making them
     public void add(Patient d){
-        
-        
+        Node n = new Node(d);
+        this.tail.next = n;
+        this.tail = n;     
         
     }
     public void add(Patient d, int i){
+       Node n = new Node(d);
+       n.next = this.get(i+1);
+       this.get(i).next = n;   
        
+    }
+    public void add(LinkedList l){
         
     }
     
