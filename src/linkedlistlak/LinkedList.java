@@ -60,16 +60,16 @@ public class LinkedList {
           //set the tail to the second last node
           tail = get(size-2); 
           //set the new tail's next to null (remove one after tail)
-          tail.next = null;
+          tail.setNext(null);
         //if the head is to be removed
         }else if(i == 0){
             //assign the head variable to the next node
-            head = head.next;
+            head = head.getNext();
         }else{
             //create a node object to represent the node before the one to be removed
             Node n = get(i-1);
             //set the node at this position's next to the node after the replaced one
-            n.next = n.next.next;
+            n.setNext(n.getNext().getNext());
         }
         //reduce the size by one
         size--;
@@ -89,7 +89,7 @@ public class LinkedList {
                 break;
             }
             //if it was not found, move to the next node
-            n = n.next;
+            n = n.getNext();
         }
     }
 
