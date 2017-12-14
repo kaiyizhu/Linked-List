@@ -71,10 +71,12 @@ public class LinkedList {
     public void remove(Patient d){
         //create a node to represent the head
         Node n = head;
+        Object sought = d;
         //for every node in the list
         for(int i=0; i<size;i++){
             //if this node's data equals the sought data
-             if(n.getData().compareTo(d) == 0){
+            Patient pat = (Patient)n.getData();
+             if(pat.compareTo(sought) == 0){
                 //remove it
                 remove(i);
                 //break the loop
