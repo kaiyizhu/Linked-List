@@ -35,7 +35,7 @@ public class LinkedList {
     //yup, they should be patient. Ty for making them
     public void add(Patient d){
         Node n = new Node(d);
-        this.tail.next = n;
+        this.tail.next = n.;
         this.tail = n;     
         
     }

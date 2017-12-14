@@ -13,8 +13,8 @@ package linkedlistlak;
  */
 public class Node<Patient>  implements Comparable<Node> {
    
-    public Node<Patient> next; //refers to the next node in a list
-    public Patient data;// the patients data
+    private Node<Patient> next; //refers to the next node in a list
+    private Patient data;// the patients data
     
     /**
      * A Constructor for node.
@@ -46,7 +46,7 @@ public class Node<Patient>  implements Comparable<Node> {
      * @return      a positive, negative, or 0 
      */
     @Override
-    public int compareTo(Node o) {
+    public int compareTo(Node o) { // NOT FINISHED
         
         return 0;
     }
