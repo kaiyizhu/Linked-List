@@ -38,35 +38,19 @@ public class Patient implements Comparable
     public int compareTo(Object o)
     {
         Patient p = (Patient) o;
-        if (priority > p.getPriority())
+        if (priority != p.getPriority())
         {
-            return priority;///////////////something
-        } else if (priority < p.getPriority())
-        {
-            return p.getPriority();/////////something
+            return priority - p.getPriority();
         } else
         {
-            if (p.getLastName().compareTo(lastName) > 0)
+            if (lastName.compareTo(p.getLastName()) == 0)
             {
-                ///return something
-            } else if (p.getLastName().compareTo(lastName) < 0)
-            {
-                ///return something
-            } else
-            {
-                if (p.getFirstName().compareTo(firstName) > 0)
-                {
-                    ///return something
-                } else if (p.getFirstName().compareTo(firstName) < 0)
-                {
-                    ///return something
-                } else
-                {
-                    ///return same;
-                }
+                return firstName.compareTo(p.getFirstName());
+            }
+            else{
+                return lastName.compareTo(p.getLastName());
             }
         }
-        return 0;
     }
 
     public String getFirstName()
