@@ -9,7 +9,9 @@ package linkedlistlak;
  *
  * @author User
  */
-public class LinkedList {
+public class LinkedList
+{
+
     //refers to the node at the first link of the LinkedList
     private Node head;
     //refers to the node at the last link of the LinkedList
@@ -39,14 +41,25 @@ public class LinkedList {
     }
             //Kaiyi
     //not sure if this guy should return a Patient or Node
-    public Node get(int i){
-        return null;
+    public Node get(int i)
+    {
+        Node n = head;
+        //Patient temp = (Patient) n.getData();
+        for (int j = 0; j < i; j++)
+        {
+            n = n.getNext();
+        }
+        //if it was not found, move to the next node
+       return n;
     }
-    public int getSize(){
-        return 0;
+
+public int getSize(int add)
+    {
+        return size;
     }
-    public String toString(){
-        return null;
+
+    public String toString(Node n){
+        return n.toString();
     } 
     
             //Asher
@@ -79,9 +92,11 @@ public class LinkedList {
     
     
     //Luke
-    public void remove(int i){
+    public void remove(int i)
+    {
         //if the index is larger than the last element's index
-        if(i > size -1){
+        if (i > size - 1)
+        {
             //should probobally throw an exception here
             return;
         //otherwise, if you want to remove the tail
@@ -96,22 +111,26 @@ public class LinkedList {
             head = head.getNext();
         }else{
             //create a node object to represent the node before the one to be removed
-            Node n = get(i-1);
+            Node n = get(i - 1);
             //set the node at this position's next to the node after the replaced one
             n.setNext(n.getNext().getNext());
         }
         //reduce the size by one
         size--;
     }
-    public void remove(Patient d){
+
+    public void remove(Patient d)
+    {
         //create a node to represent the head
         Node n = head;
         Object sought = d;
         //for every node in the list
-        for(int i=0; i<size;i++){
+        for (int i = 0; i < size; i++)
+        {
             //if this node's data equals the sought data
-            Patient pat = (Patient)n.getData();
-             if(pat.compareTo(sought) == 0){
+            Patient pat = (Patient) n.getData();
+            if (pat.compareTo(sought) == 0)
+            {
                 //remove it
                 remove(i);
                 //break the loop
@@ -119,9 +138,8 @@ public class LinkedList {
             }
             //if it was not found, move to the next node
             n = n.getNext();
+            
         }
     }
 
-   
-    
 }
