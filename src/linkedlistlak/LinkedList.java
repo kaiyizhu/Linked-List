@@ -17,7 +17,26 @@ public class LinkedList {
     //The number of elements in the linkedList 
     //same as with arrays, should be equal to the final index +1
     private int size;
-    
+
+    public Node getTail() {
+        return tail;
+    }
+
+    public Node getHead() {
+        return head;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public void setTail(Node tail) {
+        this.tail = tail;
+    }
+
+    public void setHead(Node head) {
+        this.head = head;
+    }
             //Kaiyi
     //not sure if this guy should return a Patient or Node
     public Node get(int i){
@@ -31,23 +50,33 @@ public class LinkedList {
     } 
     
             //Asher
-    //I'm not sure if these parameters should be Patient or Node
-    //yup, they should be patient. Ty for making them
+   
+    /**
+     * Adds in data to the end of a list.
+     * Creates a node and stores inputted
+     * data, places node at end of list
+     * @param d     Patient data
+     */
     public void add(Patient d){
         Node n = new Node(d);
-        this.tail.next = n.;
+        this.tail.setNext(n);
         this.tail = n;     
         
     }
+    /**
+     * Adds in data to specified spot.
+     * Creates a node and stores inputted
+     * data, places node at specified spot
+     * @param d     Patient data
+     * @param i     index to insert
+     */
     public void add(Patient d, int i){
        Node n = new Node(d);
-       n.next = this.get(i+1);
-       this.get(i).next = n;   
+       n.setNext(this.get(i+1));
+       this.get(i).setNext(n);   
        
     }
-    public void add(LinkedList l){
-        
-    }
+    
     
     //Luke
     public void remove(int i){
