@@ -9,7 +9,9 @@ package linkedlistlak;
  *
  * @author User
  */
-public class LinkedList {
+public class LinkedList
+{
+
     //refers to the node at the first link of the LinkedList
     private Node head;
     //refers to the node at the last link of the LinkedList
@@ -17,66 +19,87 @@ public class LinkedList {
     //The number of elements in the linkedList 
     //same as with arrays, should be equal to the final index +1
     private int size;
-    
-            //Kaiyi
+
+    //Kaiyi
     //not sure if this guy should return a Patient or Node
-    public Node get(int i){
+    public Node get(int i)
+    {
+        Node n = head;
+        //Patient temp = (Patient) n.getData();
+        for (int j = 0; j < i; j++)
+        {
+            n = n.next;
+        }
+        //if it was not found, move to the next node
+       return n;
+    }
+
+public int getSize(int add)
+    {
+        return size;
+    }
+
+    public String toString()
+    {
         return null;
     }
-    public int getSize(){
-        return 0;
-    }
-    public String toString(){
-        return null;
-    } 
-    
-            //Asher
+
+    //Asher
     //I'm not sure if these parameters should be Patient or Node
     //yup, they should be patient. Ty for making them
-    public void add(Patient d){
-        
-        
-        
+    public void add(Patient d)
+    {
+
     }
-    public void add(Patient d, int i){
-       
-        
+
+    public void add(Patient d, int i)
+    {
+
     }
-    
+
     //Luke
-    public void remove(int i){
+    public void remove(int i)
+    {
         //if the index is larger than the last element's index
-        if(i > size -1){
+        if (i > size - 1)
+        {
             //should probobally throw an exception here
             return;
-        //otherwise, if you want to remove the tail
-        }else if(i == size-1){
-          //set the tail to the second last node
-          tail = get(size-2); 
-          //set the new tail's next to null (remove one after tail)
-          tail.next = null;
-        //if the head is to be removed
-        }else if(i == 0){
+            //otherwise, if you want to remove the tail
+        } else if (i == size - 1)
+        {
+            //set the tail to the second last node
+            tail = get(size - 2);
+            //set the new tail's next to null (remove one after tail)
+            tail.next = null;
+            //if the head is to be removed
+        } else if (i == 0)
+        {
             //assign the head variable to the next node
             head = head.next;
-        }else{
+        } else
+        {
             //create a node object to represent the node before the one to be removed
-            Node n = get(i-1);
+            Node n = get(i - 1);
             //set the node at this position's next to the node after the replaced one
             n.next = n.next.next;
         }
         //reduce the size by one
         size--;
     }
-    public void remove(Patient d){
+
+    public void remove(Patient d)
+    {
         //create a node to represent the head
         Node n = head;
         Object sought = d;
         //for every node in the list
-        for(int i=0; i<size;i++){
+        for (int i = 0; i < size; i++)
+        {
             //if this node's data equals the sought data
-            Patient pat = (Patient)n.getData();
-             if(pat.compareTo(sought) == 0){
+            Patient pat = (Patient) n.getData();
+            if (pat.compareTo(sought) == 0)
+            {
                 //remove it
                 remove(i);
                 //break the loop
@@ -87,6 +110,4 @@ public class LinkedList {
         }
     }
 
-   
-    
 }
