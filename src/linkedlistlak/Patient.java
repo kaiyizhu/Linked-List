@@ -30,7 +30,7 @@ public class Patient implements Comparable
 
     public String toString(Node n)
     {
-        return (String)n.getData();
+        return getFirstName() + ", " + getLastName() + ", " + getPriority();
 
     }
 
