@@ -9,11 +9,10 @@ package linkedlistlak;
  *A node for Patient data.
  * A node that stores Patient data.
  * @author User
- * @param <Patient>     a patient
  */
-public class Node<Patient>  implements Comparable<Node> {
+public class Node  implements Comparable<Node> {
    
-    private Node<Patient> next; //refers to the next node in a list
+    private Node next; //refers to the next node in a list
     private Patient data;// the patients data
     
     /**
@@ -24,6 +23,7 @@ public class Node<Patient>  implements Comparable<Node> {
      */
     public Node(Patient data){
           this.data = data;  
+          
     }
     /**
      * A Constructor for node.
@@ -32,30 +32,22 @@ public class Node<Patient>  implements Comparable<Node> {
      * @param next      the next node in a list
      * @param data      the patient data
      */
-    public Node(Node<Patient> next, Patient data){
+    public Node(Node next, Patient data){
         this.next = next;
         this.data = data;
     }
-    /**
-     * A method used to compare nodes.
-     * A method used to compare nodes and
-     * takes a node as a param.
-     * Returns 0 if equal, -1 if less than, or 1 if greater than
-     * the argument.
-     * @param o     the node to compare to
-     * @return      a positive, negative, or 0 
-     */
+    
     @Override
-    public int compareTo(Node o) { // NOT FINISHED
+    public int compareTo(Node o) {
         
-        return 0;
+        return this.data.compareTo(o.getData());
     }
     /**
      * gets next.
      * Returns the next variable
      * @return      next node
      */
-    public Node<Patient> getNext(){
+    public Node getNext(){
         
         return this.next;
     }
@@ -84,7 +76,7 @@ public class Node<Patient>  implements Comparable<Node> {
      * param.
      * @param next      the next to set
      */
-    public void setNext(Node<Patient> next) {
+    public void setNext(Node next) {
         this.next = next;
     }
    
